@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block header %}
+<h1 class="left title">{% block title %}
+Shopping list
+{% endblock %}</h1>
+
+{% endblock %}
+{% block content %}
+<ul id="shop__list" class="list">
+    {% for item in items %}
+    <li class="item">
+        {{ item }}
+    </li>
+    {% endfor %}
+</ul>
+<form id="shop__list--form" method="post">
+    <label for="new__item">new item</label>
+    <input type="text" name="new__item" id="new__item">
+    <input type="submit" hidden>
+</form>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <header class="header clear">
+        {% block header %}{% endblock %}
+        {% if g.user %}
+            <div class="auth right hello--sig">Hello {{g.user['username']}}</div>
+            <div class="auth right logout"><a href="{{ url_for('auth.logout') }}">logout</a></div>
+        {% else %}
+            <div class="auth login right"><a href="{{ url_for('auth.login') }}">login</a></div>
+            <div class="auth signup right"><a href="{{ url_for('auth.signup') }}">signup</a></div>
+        {% endif %}
+    </header>
+    <div class="body--block clear">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+
+    </footer>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDBo8ud0UkZU1W-3u4RWVQ8CjZPcyqJFDM",
+            authDomain: "shopping-list-ed73c.firebaseapp.com",
+            projectId: "shopping-list-ed73c",
+            storageBucket: "shopping-list-ed73c.appspot.com",
+            messagingSenderId: "687642710574",
+            appId: "1:687642710574:web:50374f45006940c26a45bf",
+            measurementId: "G-7EQSJES25S"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='scripts.js') }}"></script>
+</body>
+</html>

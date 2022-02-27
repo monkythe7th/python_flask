@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.auth {
+    height: 20px;
+    margin: 5px;
+}
+
+.header {
+    padding: 25px;
+}
+
+.header .title {
+    margin: 5px;
+}
+
+
+
+.body--block {
+    margin: 20px auto;
+    padding: 15px;
+    height: 100%;
+}
+
+.body--block .signup,
+.body--block .login {
+    height:max-content;
+    text-align: center;
+}
+
+.body--block .signup .inputs,
+.body--block .login .inputs {
+    margin: 15px auto;
+    width: 75%;
+    height: 30px;
+    padding: 5px 10px 0;
+    border: none;
+    border-bottom: 1px solid #696969;
+}
+
+.body--block .submit {
+    width: 150px;
+    height: 30px;
+    border: none;
+}
+
+.body--block #shop__list {
+    list-style: none;
+}

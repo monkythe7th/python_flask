@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+Hello Flask
+{% endblock %}
+{% block header %}
+<h1 class="left title">HelloFlask</h1>
+
+{% endblock %}
+{% block content %}
+    <h2>Hello Flask</h2>
+    <p class="link"><a href="{{ url_for('shopping.shop_list') }}">Shopping</a></p>
+{% endblock %}
