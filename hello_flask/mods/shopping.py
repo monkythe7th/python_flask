@@ -1,7 +1,7 @@
 import sys
 from flask import render_template, Blueprint, request, url_for, g, session, redirect, flash, jsonify
 from api import create, read as getter, update, delete as deler, db_conn
-from auth import login_required
+from .auth import login_required
 
 col = 'shopping'
 bp = Blueprint(col, __name__, url_prefix='/shopping')
